@@ -63,6 +63,7 @@ def submit():
   # return 'Extracted Keyphrases: {}'.format(dictFinalKeyphrasesLocation)
   return 'Extracted Keyphrases: {}'.format(result)
   
+
  
 @app.route('/json')
 def json():
@@ -89,3 +90,23 @@ def runMyCodeForExtractingKeyphrases():
   
   return dictFinalKeyphrasesLocation
 
+def processInputs(inputReviewString, inputReviewLocation):
+  inputReviewString = inputReviewString.strip('\n')
+  listText = inputReviewString.split('\n')
+  count = 1
+  inputTextDict = {}
+  for line in listText:
+    inputTextDict.update({count:line})
+    count= count+1
+    
+  inputReviewLocation = inputReviewLocation.strip('\n')
+  listLocation = inputReviewLocation.split('\n')  
+  count = 1
+  inputLocationDict = {}
+  for location in listLocation:
+    inputLocationDict.update({count:location})
+    count=count+1
+    
+  # print(inputTextDict)
+  # print(inputLocationDict)
+  return inputTextDict, inputLocationDict

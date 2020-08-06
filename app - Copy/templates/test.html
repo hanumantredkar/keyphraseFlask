@@ -1,0 +1,17 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Microblog</title>
+        {% else %}
+        <title>Welcome to Microblog!</title>
+        {% endif %}
+    </head>
+    <body>
+        <h1>Hello, {{ user.username }}!</h1>
+    </body>
+		<form action="#" method="post">
+			<p>Name:</p>
+			<p><input type="text" name="nm" /></p>
+			<p><input type="submit" value="Submit" /></p>
+		</form>
+</html>
